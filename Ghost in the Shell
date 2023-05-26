@@ -1,0 +1,75 @@
+﻿auard@debian:~$ sudo apt install tree
+[sudo] Mot de passe de nauard : 
+Lecture des listes de paquets... Fait
+Construction de l'arbre des dépendances... Fait
+Lecture des informations d'état... Fait      
+Les NOUVEAUX paquets suivants seront installés :
+  tree
+0 mis à jour, 1 nouvellement installés, 0 à enlever et 0 non mis à jour.
+Il est nécessaire de prendre 49,6 ko dans les archives.
+Après cette opération, 118 ko d'espace disque supplémentaires seront utilisés.
+Réception de :1 http://deb.debian.org/debian bullseye/main amd64 tree amd64 1.8.0-1+b1 [49,6 kB]
+49,6 ko réceptionnés en 0s (364 ko/s)
+Sélection du paquet tree précédemment désélectionné.
+(Lecture de la base de données... 127862 fichiers et répertoires déjà installés.)
+Préparation du dépaquetage de .../tree_1.8.0-1+b1_amd64.deb ...
+Dépaquetage de tree (1.8.0-1+b1) ...
+Paramétrage de tree (1.8.0-1+b1) ...
+Traitement des actions différées (« triggers ») pour man-db (2.9.4-2) ...
+nauard@debian:~$ tree / > tree.save &
+[1] 1301
+nauard@debian:~$ ls | wc -l
+11
+[1]+  Fini                    tree / > tree.save
+nauard@debian:~$ sudo apt update && sudo apt upgrade
+Réception de :1 http://security.debian.org/debian-security bullseye-security InRelease [48,4 kB]
+Atteint :2 http://deb.debian.org/debian bullseye InRelease       
+Réception de :3 http://deb.debian.org/debian bullseye-updates InRelease [44,1 kB]
+92,4 ko réceptionnés en 0s (230 ko/s)
+Lecture des listes de paquets... Fait
+Construction de l'arbre des dépendances... Fait
+Lecture des informations d'état... Fait      
+Tous les paquets sont à jour.
+Lecture des listes de paquets... Fait
+Construction de l'arbre des dépendances... Fait
+Lecture des informations d'état... Fait      
+Calcul de la mise à jour... Fait
+0 mis à jour, 0 nouvellement installés, 0 à enlever et 0 non mis à jour.
+nauard@debian:~$ tree nauard
+nauard [error opening dir]
+
+0 directories, 0 files
+nauard@debian:~$ tree Documents
+Documents
+├── nb_lignes.txt
+├── save_sources
+└── une_commande.txt
+
+0 directories, 3 files
+nauard@debian:~$ tree Bureau
+Bureau
+├── Documents -> /home/nauard/Documents
+└── Modèles -> /home/nauard/Modèles
+
+2 directories, 0 filesnauard@debian:~$ tree ~/
+/home/nauard/
+├── Bureau
+│   ├── Documents -> /home/nauard/Documents
+│   └── Modèles -> /home/nauard/Modèles
+├── Documents
+│   ├── Ghost in the Shell
+│   ├── nb_lignes.txt
+│   ├── save_sources
+│   └── une_commande.txt
+├── Images
+├── Modèles
+├── Musique
+├── nb_lignes.txt
+├── Public
+├── Téléchargements
+│   └── Screenshot 2023-05-21 at 09-04-12 Debian Squeeze Wallpapers - Tux-planet.png
+├── tree.save
+├── une_commande.txt
+└── Vidéos
+
+10 directories, 8 files
